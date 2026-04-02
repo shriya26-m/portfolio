@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+body {
+  background: linear-gradient(270deg, #020617, #0f172a, #020617);
+  background-size: 600% 600%;
+  animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% {background-position: 0%}
+  50% {background-position: 100%}
+  100% {background-position: 0%}
+}
+.dark{
+  color-scheme: dark;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+.glow {
+  text-shadow: 0 0 10px #22d3ee, 0 0 20px #7c3aed;
+}
+
+/* Glow animation */
+.skill-glow:hover {
+  box-shadow: 0 0 20px #8b5cf6, 0 0 40px #22d3ee;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
